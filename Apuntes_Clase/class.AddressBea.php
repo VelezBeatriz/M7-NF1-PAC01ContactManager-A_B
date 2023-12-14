@@ -1,21 +1,21 @@
-<!-- Comprobar el fichero class.DataManager.php -->
 <?php
-    //Lo requiero 1 sola vez
-    require_once('class.DataManager.php');
+//Creamos la clase Address que devolverá el objeto 
+class Address
+{
 
-    //Llamamos al método
-    $address = DataManager::getAddressData(1);
+    //El 90% de las  veces que manderemos requerimos que se guarden en variables privadas
+    private $id;
 
-        echo "<pre>";
-        var_dump($address);
-        echo "</pre>";
+    function __construct($id)
+    {
+        //Este parámetro debemos construirlo para guardarlo
+        $this->id = $id;
+    }
 
-    //Llamamos al método
-
-    $addressObj = DataManager::getAddressObjectsForEntity(1);
-
-        echo "<pre>";
-        var_dump($addressObj);
-        echo "</pre>";
-
-?>
+    //Vamos a llamar ese atributo para ver si lo hemos guardado
+    function get_ID()
+    {
+        //Devolvemos el atributo
+        return $this->id;
+    }
+}
